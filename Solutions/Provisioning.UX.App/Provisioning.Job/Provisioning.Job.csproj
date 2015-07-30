@@ -131,6 +131,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\cob-pnp-provisioning.pubxml" />
+    <None Include="Properties\webjob-publish-settings.json" />
     <None Include="provisioningSettings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>

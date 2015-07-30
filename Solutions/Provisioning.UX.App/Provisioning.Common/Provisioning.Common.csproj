@@ -144,6 +144,7 @@
     <EmbeddedResource Include="PCResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PCResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

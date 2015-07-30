@@ -27,7 +27,7 @@ namespace Provisioning.UX.AppWeb.Controllers
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        [Route("api/provisioning/siteRequests/validateNewSiteRequestUrl")]
+        [Route("Provisioning.UX.AppWeb/api/provisioning/siteRequests/validateNewSiteRequestUrl")]
         [WebAPIContextFilter]
         [HttpPost]
         public SiteCheckResponse ValidateNewSiteRequestUrl([FromBody]string value)
@@ -65,7 +65,7 @@ namespace Provisioning.UX.AppWeb.Controllers
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        [Route("api/provisioning/siteRequests/newSiteRequest")]
+        [Route("Provisioning.UX.AppWeb/api/provisioning/siteRequests/newSiteRequest")]
         [WebAPIContextFilter]
         [HttpPost]
         public SiteRequest NewSiteRequest([FromBody]string value)
@@ -102,7 +102,7 @@ namespace Provisioning.UX.AppWeb.Controllers
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        [Route("api/provisioning/siteRequests/getOwnerRequests")]
+        [Route("Provisioning.UX.AppWeb/api/provisioning/siteRequests/getOwnerRequests")]
         [WebAPIContextFilter]
         [HttpPost]
         public SiteRequestsResponse GetOwnerRequestsByEmail([FromBody] string ownerEmailAddress)

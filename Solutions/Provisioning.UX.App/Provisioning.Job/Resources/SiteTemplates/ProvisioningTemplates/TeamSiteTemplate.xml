@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<pnp:SharePointProvisioningTemplate ID="TEMPLATE1" Version="1.0"
+<pnp:SharePointProvisioningTemplate ID="TEAMSITE_TEMPLATE" Version="1.0"
   xmlns:pnp="http://schemas.dev.office.com/PnP/2015/03/ProvisioningSchema"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

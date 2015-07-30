@@ -35,6 +35,18 @@ namespace Provisioning.Common.Mail
             string successEmail = cf.GetAppSettingsKey(CONFIG_NEWSITETEMPLATE);
             string failEmail = cf.GetAppSettingsKey(CONFIG_FAILEMAILTEMPLATE);
       
+            // COB added - for referencing files in Azure WebJob/WebApp..
+            successEmail = Environment.GetEnvironmentVariable("HOME") + successEmail;
+            successEmail.Replace("/", "\\");
+            Log.Info("Provisioning.Common.Mail.EmailConfig",
+                "Successs mail path = '{0}'", successEmail);
+
+            failEmail = Environment.GetEnvironmentVariable("HOME") + failEmail;
+            failEmail.Replace("/", "\\");
+            Log.Info("Provisioning.Common.Mail.EmailConfig",
+                "Fail mail path = '{0}'", failEmail);
+                
+
             if (File.Exists(successEmail))
             {
                 using (StreamReader sr = new StreamReader(successEmail))

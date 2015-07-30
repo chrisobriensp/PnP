@@ -9,13 +9,13 @@
 
                 $http({
                     method: 'GET',
-                    url: '/api/provisioning/templates/getAvailableTemplates',
+                    url: '/Provisioning.UX.AppWeb/api/provisioning/templates/getAvailableTemplates',
                     headers:
                     {
                         'accept': 'application/json'
                     }
                 }).success(function (data, status, headers, config) {
-                    console.debug("Request Success /api/provisioning/templates/getAvailableTemplates", data);
+                    console.debug("Request Success /Provisioning.UX.AppWeb/api/provisioning/templates/getAvailableTemplates", data);
                     deferred.resolve(data.templates)
                 }).error(function (data, status) {
                     deferred.reject(data);
@@ -27,14 +27,14 @@
                 var formData = JSON.stringify(request);
                 $http({
                     method: 'POST',
-                    url: '/api/provisioning/siteRequests/newSiteRequest',
+                    url: '/Provisioning.UX.AppWeb/api/provisioning/siteRequests/newSiteRequest',
                     data: "=" + formData,
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                 }).success(function (data, status, headers, config) {
-                    console.debug("Request Success /api/provisioning/siteRequests/newSiteRequest ", data);
+                    console.debug("Request Success /Provisioning.UX.AppWeb/api/provisioning/siteRequests/newSiteRequest ", data);
                     deferred.resolve(data);
                 }).error(function (data, status) {
-                    console.log("Request Failed /api/provisioning/newSiteRequest Request " + data);
+                    console.log("Request Failed /Provisioning.UX.AppWeb/api/provisioning/newSiteRequest Request " + data);
                     deferred.reject(data);
                 });
                 return deferred;
@@ -45,13 +45,13 @@
                 $http({
                     method: 'POST',
                     data: "=" + formData,
-                    url: '/api/provisioning/siteRequests/getOwnerRequests',
+                    url: '/Provisioning.UX.AppWeb/api/provisioning/siteRequests/getOwnerRequests',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                 }).success(function (data, status, headers, config) {
-                    console.log("Request Success /api/provisioning/getOwnerRequests " + data);
+                    console.log("Request Success /Provisioning.UX.AppWeb/api/provisioning/getOwnerRequests " + data);
                     deferred.resolve(data);
                 }).error(function (data, status) {
-                    console.log("Request Failed /api/provisioning/getOwnerRequests " + data);
+                    console.log("Request Failed /Provisioning.UX.AppWeb/api/provisioning/getOwnerRequests " + data);
                     deferred.reject(data);
                 });
                 return deferred;
@@ -62,14 +62,14 @@
                 $http({
                     method: 'POST',
                     data: "=" + formData,
-                    url: '/api/provisioning/externalSharingEnabled',
+                    url: '/Provisioning.UX.AppWeb/api/provisioning/externalSharingEnabled',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                 }).success(function (data, status, headers, config) {
                     deferred.resolve(data);
-                    console.log("Request Succssess to api/provisioning/externalSharingEnabled result is " + data);
+                    console.log("Request Succssess to Provisioning.UX.AppWeb/api/provisioning/externalSharingEnabled result is " + data);
                 }).error(function (data, status) {
                     deferred.reject(data);
-                    console.log("Request Failed to api/provisioning/externalSharingEnabled " + data );
+                    console.log("Request Failed to Provisioning.UX.AppWeb/api/provisioning/externalSharingEnabled " + data );
                 });
                 return deferred;
             }
@@ -79,14 +79,14 @@
                 $http({
                     method: 'POST',
                     data: "=" + formData,
-                    url: '/api/provisioning/siteRequests/validateNewSiteRequestUrl',
+                    url: '/Provisioning.UX.AppWeb/api/provisioning/siteRequests/validateNewSiteRequestUrl',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                 }).success(function (data, status, headers, config) {
                     deferred.resolve(data);
-                    console.log("Request Succssess to api/provisioning/validateNewSiteRequestUrl result is " + data);
+                    console.log("Request Succssess to Provisioning.UX.AppWeb/api/provisioning/validateNewSiteRequestUrl result is " + data);
                 }).error(function (data, status) {
                     deferred.reject(data);
-                    console.log("Request Failed to api/provisioning/validateNewSiteRequestUrl " + data);
+                    console.log("Request Failed to Provisioning.UX.AppWeb/api/provisioning/validateNewSiteRequestUrl " + data);
                 });
                 return deferred;
             }

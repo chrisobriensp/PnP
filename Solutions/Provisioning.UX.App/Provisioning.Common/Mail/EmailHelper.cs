@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,8 +32,16 @@ namespace Provisioning.Common.Mail
         {
             try
             {
-                using (SmtpClient client = new SmtpClient())
+                // COB added..
+                // Hotmail SMTP server address
+                string smtpServer = "smtp.live.com";
+
+                string smtpUser = "chriso_brien@hotmail.com";
+                string smtpPassword = "Tw1nv1lle";
+
+                using (SmtpClient client = new SmtpClient(smtpServer, 25))
                 {
+                    client.Credentials = new NetworkCredential(smtpUser, smtpPassword);
                     using (MailMessage emailMessage = new MailMessage())
                     {
                         emailMessage.Subject = message.Subject;
@@ -66,8 +75,16 @@ namespace Provisioning.Common.Mail
         {
             try
             {
-                using (SmtpClient client = new SmtpClient())
+                // COB added..
+                // Hotmail SMTP server address
+                string smtpServer = "smtp.live.com";
+
+                string smtpUser = "chriso_brien@hotmail.com";
+                string smtpPassword = "Tw1nv1lle";
+
+                using (SmtpClient client = new SmtpClient(smtpServer, 25))
                 {
+                    client.Credentials = new NetworkCredential(smtpUser, smtpPassword);
                     using (MailMessage emailMessage = new MailMessage())
                     {
                         emailMessage.Subject = message.Subject;

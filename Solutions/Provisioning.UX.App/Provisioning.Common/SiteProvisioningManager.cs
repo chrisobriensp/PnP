@@ -66,14 +66,21 @@ namespace Provisioning.Common
                 this._siteprovisioningService.Authentication.SiteUrl = siteRequest.Url;
                 this._siteprovisioningService.SetSitePolicy(siteRequest.SitePolicy);
                 var _web = _siteprovisioningService.GetWebByUrl(siteRequest.Url);
+                
+                // COB - hardcoded Connector config here, since no documentation yet to indicate expected config!
+                // Update - have just re-enabled this code since was complaining about no parameters being passed, but
+                // not yet tested properly..
                 provisioningTemplate.Connector = this.GetProvisioningConnector();
+
+                //provisioningTemplate.Connector = new FileSystemConnector();
+
                 provisioningTemplate = new TemplateConversion().HandleProvisioningTemplate(provisioningTemplate, siteRequest);
                 _web.ApplyProvisioningTemplate(provisioningTemplate);
             }
             catch(Exception _ex)
             {
                 //TODO RESOURCE FILES
-                var _message =string.Format("Error Occured when applying the template: {0}", _ex.Message);
+                var _message =string.Format("Error occured when applying the template: {0}", _ex.Message);
                 throw new ProvisioningTemplateException(_message, _ex);
             }
         }

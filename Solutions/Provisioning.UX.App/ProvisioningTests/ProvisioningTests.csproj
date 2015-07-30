@@ -76,6 +76,7 @@
     <Compile Include="3_Data\SiteRequestFactoryTests.cs" />
     <Compile Include="3_Data\SiteRequestManagerTests.cs" />
     <Compile Include="4_Authentication\AuthenticationTests.cs" />
+    <Compile Include="5_COB\SiteCreationTests.cs" />
     <Compile Include="Mocks\MockSiteRequestInfo.cs" />
     <Compile Include="TestConstants.cs" />
     <Compile Include="Mocks\MockContentType.cs" />

@@ -35,7 +35,7 @@ namespace Provisioning.UX.AppWeb.Controllers
         /// Returns a list of available site policies
         /// </summary>
         /// <returns></returns>
-        [Route("api/provisioning/availableSitePolicies")]
+        [Route("Provisioning.UX.AppWeb/api/provisioning/availableSitePolicies")]
         [WebAPIContextFilter]
         [HttpGet]
         public List<SitePolicyResults> GetSitePolicies()
@@ -59,7 +59,7 @@ namespace Provisioning.UX.AppWeb.Controllers
         }
         #endregion
 
-        [Route("api/provisioning/externalSharingEnabled")]
+        [Route("Provisioning.UX.AppWeb/api/provisioning/externalSharingEnabled")]
         [WebAPIContextFilter]
         [HttpPost]
         public ExternalSharingRequest IsExternalSharingEnabled([FromBody]string value)
