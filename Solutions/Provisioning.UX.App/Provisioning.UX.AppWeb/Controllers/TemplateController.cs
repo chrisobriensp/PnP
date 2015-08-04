@@ -28,7 +28,7 @@ namespace Provisioning.UX.AppWeb.Controllers
         /// Returns a list of available site templates to create
         /// </summary>
         /// <returns></returns>
-        [Route("Provisioning.UX.AppWeb/api/provisioning/templates/getAvailableTemplates")]
+        [Route("api/provisioning/templates/getAvailableTemplates")]
         [WebAPIContextFilter]
         [HttpGet]
         public TemplateResultResponse GetSiteTemplates()

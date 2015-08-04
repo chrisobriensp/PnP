@@ -4,7 +4,6 @@ using Provisioning.Common.Data;
 using Provisioning.Common;
 using System.Collections.Generic;
 using Provisioning.Common.Data.SiteRequests;
-using System.Configuration;
 
 namespace ProvisioningTests._3_Data
 {
@@ -95,25 +94,24 @@ namespace ProvisioningTests._3_Data
         {
             var _owner = new SiteUser()
             {
-                Name = "cob@chrisobrien.com"
+                Name = "frank@contoso.com"
             };
             //Add addtional Users
             List<SiteUser> _additionalAdmins = new List<SiteUser>();
             SiteUser _admin1 = new SiteUser();
-            _admin1.Name = "suzannejohnson@chrisobrien.com";
+            _admin1.Name = "user1@contoso.com";
+            SiteUser _admin2 = new SiteUser();
+            //  _admin2.Email = "frank@microsoftacs.onmicrosoft.com";
+            _admin2.Name = "user2@contoso.com";
             _additionalAdmins.Add(_admin1);
-            
-            //SiteUser _admin2 = new SiteUser();
-            ////  _admin2.Email = "frank@microsoftacs.onmicrosoft.com";
-            //_admin2.Name = "user2@contoso.com";
-            //_additionalAdmins.Add(_admin2);
+            _additionalAdmins.Add(_admin2);
 
             var _siteInfo = new SiteRequestInformation()
             {
-                Title = "PnP provisioned site 1",
-                Description = "PnP_Provisioned1 Description",
+                Title = "Test Title",
+                Description = "Test Description",
                 Template = "CT2",
-                Url = ConfigurationManager.AppSettings["SPHost"] + "/sites/PnP_Provisioned1",
+                Url = "https://spsites.contoso.com/sites/B3",
                 SitePolicy = "HBI",
                 SiteOwner = _owner,
                 AdditionalAdministrators = _additionalAdmins,

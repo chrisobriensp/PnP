@@ -62,19 +62,9 @@ namespace Provisioning.Job
             {
                 try 
                 {
-                    Log.Info("Provisioning.Job.SiteProvisioningJob.ProvisionSites",
-                        "Using siteRequest.Template '{0}'", siteRequest.Template);
-
-                    Log.Info("Provisioning.Job.SiteProvisioningJob.ProvisionSites",
-                        "Using template name '{0}'", siteRequest.Template);
-
                     var _template = _tm.GetTemplateByName(siteRequest.Template);
-                    Log.Info("Provisioning.Job.SiteProvisioningJob.ProvisionSites",
-                        "Successfully got template '{0}'", siteRequest.Template);
                     var _provisioningTemplate = _tm.GetProvisioningTemplate(_template.ProvisioningTemplate);
-                    Log.Info("Provisioning.Job.SiteProvisioningJob.ProvisionSites",
-                          "Successfully got provisioning template '{0}'", _template.ProvisioningTemplate);
-
+                  
                     //NO TEMPLATE FOUND THAT MATCHES WE CANNOT PROVISION A SITE
                     if (_template == null) {
                         Log.Warning("Provisioning.Job.SiteProvisioningJob.ProvisionSites", "Template {0} was not found for Site Url {1}.", siteRequest.Template, siteRequest.Url);

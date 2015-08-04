@@ -69,7 +69,7 @@
                 // Set modal configuration options
                 var modalInstance = $modal.open({
                     scope: $scope,
-                    templateUrl: '/Provisioning.UX.AppWeb/Pages/Wizard.modal.html',
+                    templateUrl: '/Pages/Wizard.modal.html',
                     controller: 'WizardModalInstanceController',
                     size: 'lg',
                     windowClass: 'modal-pnp'                                      

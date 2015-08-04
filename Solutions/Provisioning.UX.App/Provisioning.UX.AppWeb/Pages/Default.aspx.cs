@@ -43,7 +43,7 @@ namespace Provisioning.UX.AppWeb
             if (this.Request.Cookies[WebAPIHelper.SERVICES_TOKEN] == null)
             {
                 //Register provisioning service
-                Page.RegisterWebAPIService("Provisioning.UX.AppWeb/api/provisioning");
+                Page.RegisterWebAPIService("api/provisioning");
             }
 
             

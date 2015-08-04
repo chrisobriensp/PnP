@@ -60,16 +60,12 @@ namespace Provisioning.Common.Data.Templates
         {
             Dictionary<string, string> _props = JsonConvert.DeserializeObject<Dictionary<string, string>>(siteRequest.PropertiesJSON);
 
-            // COB added..
-            if (_props != null)
+            foreach(var prop in _props)
             {
-                foreach (var prop in _props)
-                {
-                    PropertyBagEntry _pb = new PropertyBagEntry();
-                    _pb.Key = prop.Key;
-                    _pb.Value = prop.Value;
-                    provisioningTemplate.PropertyBagEntries.Add(_pb);
-                }
+                PropertyBagEntry _pb = new PropertyBagEntry();
+                _pb.Key = prop.Key;
+                _pb.Value = prop.Value;
+                provisioningTemplate.PropertyBagEntries.Add(_pb);
             }
         }
         /// <summary>

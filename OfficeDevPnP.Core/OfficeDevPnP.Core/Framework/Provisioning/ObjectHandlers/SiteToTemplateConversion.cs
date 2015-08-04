@@ -80,9 +80,6 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
         /// <param name="provisioningInfo"></param>
         internal void ApplyRemoteTemplate(Web web, ProvisioningTemplate template, ProvisioningTemplateApplyingInformation provisioningInfo)
         {
-            Log.Info("OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers.SiteToTemplateConversion.ApplyRemoteTemplate",
-                    "Entered with web '{0}', template '{1}'", web.Url, template.Id);
-
             ProvisioningProgressDelegate progressDelegate = null;
             if (provisioningInfo != null)
             {

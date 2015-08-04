@@ -10,7 +10,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 using System.Xml.Linq;
 
 namespace Provisioning.Common.Data.Templates.Impl
@@ -82,15 +81,6 @@ namespace Provisioning.Common.Data.Templates.Impl
             try
             {
                 var _filePath = Path.Combine(this.ConnectionString.HandleEnvironmentToken(), "Templates.config");
-                Log.Info("Provisioning.Common.Data.Templates.Impl.XMLSiteTemplateManager.LoadXML", 
-                    "Original path = '{0}'", _filePath);
-                
-                // COB added - for referencing files in Azure WebJob/WebApp..
-                _filePath = Environment.GetEnvironmentVariable("HOME") + _filePath;
-                _filePath = UrlUtility.ReplaceForwardSlashesWithBackslashes(_filePath);
-                Log.Info("Provisioning.Common.Data.Templates.Impl.XMLSiteTemplateManager.LoadXML", 
-                    "Mapped path = '{0}'", _filePath);
-                
                 bool _fileExists = System.IO.File.Exists(_filePath);
                
                 Log.Info("Provisioning.Common.Data.Templates.Impl.XMLSiteTemplateManager.LoadXML", PCResources.XMLTemplateManager_TryRead_ConfigFile, _filePath);

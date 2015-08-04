@@ -1025,12 +1025,6 @@ namespace Microsoft.SharePoint.Client
         /// <param name="applyingInformation">Specified additional settings and or properties</param>
         public static void ApplyProvisioningTemplate(this Web web, ProvisioningTemplate template, ProvisioningTemplateApplyingInformation applyingInformation = null)
         {
-            Log.Info("Microsoft.SharePoint.Client.WebExtensions.ApplyProvisioningTemplate",
-                    "Entered.");
- 
-            Log.Info("Microsoft.SharePoint.Client.WebExtensions.ApplyProvisioningTemplate",
-                    "Entered with web '{0}', template '{1}'", web.Url, template.Id);
-
             // Call actual handler
             new SiteToTemplateConversion().ApplyRemoteTemplate(web, template, applyingInformation);
         }
