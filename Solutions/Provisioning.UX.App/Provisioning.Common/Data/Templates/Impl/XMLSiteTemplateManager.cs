@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Xml.Linq;
 
 namespace Provisioning.Common.Data.Templates.Impl
@@ -27,9 +28,10 @@ namespace Provisioning.Common.Data.Templates.Impl
         /// <summary>
         /// Default Constructor.
         /// </summary>
-        public XMLSiteTemplateManager() : base()
-        {  
-          
+        public XMLSiteTemplateManager()
+            : base()
+        {
+
         }
         #endregion
 
@@ -65,14 +67,14 @@ namespace Provisioning.Common.Data.Templates.Impl
                 var _pt = _provider.GetTemplate(name);
                 return _pt;
             }
-            catch(Exception _ex)
+            catch (Exception _ex)
             {
                 var _message = string.Format(PCResources.TemplateProviderBase_Exception_Message, _ex.Message);
                 Log.Fatal("Provisioning.Common.Data.Templates.Impl.XMLSiteTemplateManager", PCResources.TemplateProviderBase_Exception_Message, _ex);
                 throw new DataStoreException(_message, _ex);
             }
         }
-        
+
         #endregion
 
         #region Private Members
@@ -81,11 +83,20 @@ namespace Provisioning.Common.Data.Templates.Impl
             try
             {
                 var _filePath = Path.Combine(this.ConnectionString.HandleEnvironmentToken(), "Templates.config");
+                Log.Info("Provisioning.Common.Data.Templates.Impl.XMLSiteTemplateManager.LoadXML",
+                    "Original path = '{0}'", _filePath);
+
+                // COB added - for referencing files in Azure WebJob/WebApp..
+                _filePath = Environment.GetEnvironmentVariable("HOME") + _filePath;
+                _filePath = _filePath.Replace('/', '\\');
+                Log.Info("Provisioning.Common.Data.Templates.Impl.XMLSiteTemplateManager.LoadXML",
+                    "Mapped path = '{0}'", _filePath);
+
                 bool _fileExists = System.IO.File.Exists(_filePath);
-               
+
                 Log.Info("Provisioning.Common.Data.Templates.Impl.XMLSiteTemplateManager.LoadXML", PCResources.XMLTemplateManager_TryRead_ConfigFile, _filePath);
 
-                if(_fileExists)
+                if (_fileExists)
                 {
                     XDocument _doc = XDocument.Load(_filePath);
                     this._data = XmlSerializerHelper.Deserialize<XMLSiteTemplateData>(_doc);

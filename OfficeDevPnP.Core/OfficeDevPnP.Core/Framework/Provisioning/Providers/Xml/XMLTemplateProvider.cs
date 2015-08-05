@@ -16,7 +16,8 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml
     {
 
         #region Constructor
-        protected XMLTemplateProvider() : base()
+        protected XMLTemplateProvider()
+            : base()
         {
 
         }
@@ -56,7 +57,7 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml
                         // And convert it into a ProvisioningTemplate
                         provisioningTemplate = formatter.ToProvisioningTemplate(stream);
                     }
-                    catch(ApplicationException)
+                    catch (ApplicationException)
                     {
                         Log.Warning(Constants.LOGGING_SOURCE_FRAMEWORK_PROVISIONING, CoreResources.Provisioning_Providers_XML_InvalidFileFormat, file);
                         continue;
@@ -94,13 +95,44 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml
 
         public override ProvisioningTemplate GetTemplate(string uri, string identifier, ITemplateFormatter formatter)
         {
+            Log.Info("OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml.XmlTemplateProvider.GetTemplate",
+                    "Entered.");
+
             if (String.IsNullOrEmpty(uri))
             {
                 throw new ArgumentException("uri");
             }
 
-            // Get the XML document from a File Stream
-            Stream stream = this.Connector.GetFileStream(uri);
+            Log.Info("OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml.XmlTemplateProvider.GetTemplate",
+                    "Processing with uri '{0}' and identifier '{1}'.", uri, identifier);
+
+            // COB - temp hard-coding of path here, since documentation isn't clear on the expected config!
+            var filePath = @"D:\home\site\wwwroot\Resources\SiteTemplates\ProvisioningTemplates\" + uri;
+
+            Log.Info("OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml.XmlTemplateProvider.GetTemplate",
+                    "Attempting to load template file at physical path '{0}'", filePath);
+
+            MemoryStream stream = new MemoryStream();
+            using (FileStream fileStream = System.IO.File.OpenRead(filePath))
+            {
+                stream.SetLength(fileStream.Length);
+                fileStream.Read(stream.GetBuffer(), 0, (int)fileStream.Length);
+            }
+
+            stream.Position = 0;
+
+            // COB - need to translate URI for Azure Web App filepath..
+            //uri = Environment.GetEnvironmentVariable("HOME") + @"\";
+            //Log.Info("OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml.XmlTemplateProvider.GetTemplate",
+            //        "Fetched the following path from config for template file: '{0}'", uri);
+
+            //// COB added - for referencing files in Azure WebJob/WebApp..
+            //uri = UrlUtility.ReplaceForwardSlashesWithBackslashes(Environment.GetEnvironmentVariable("HOME"));
+            //Log.Info("OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml.XmlTemplateProvider.GetTemplate",
+            //        "Built unescaped path: '{0}'", uri);
+
+            //// Get the XML document from a File Stream
+            //Stream stream = this.Connector.GetFileStream(uri);
 
             // And convert it into a ProvisioningTemplate
             ProvisioningTemplate provisioningTemplate = formatter.ToProvisioningTemplate(stream, identifier);
@@ -157,11 +189,11 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml
 
             this.Connector.DeleteFile(uri);
         }
-       
+
         #endregion
 
         #region Helper methods
-        
+
         private void SaveToConnector(ProvisioningTemplate template, string uri, ITemplateFormatter formatter)
         {
             if (String.IsNullOrEmpty(template.Id))

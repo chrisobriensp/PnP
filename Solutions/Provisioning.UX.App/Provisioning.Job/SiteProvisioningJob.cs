@@ -62,10 +62,15 @@ namespace Provisioning.Job
             {
                 try 
                 {
+                    Log.Info("Provisioning.Job.SiteProvisioningJob.ProvisionSites",
+                        "About to get outer template with name '{0}'", siteRequest.Template);
                     var _template = _tm.GetTemplateByName(siteRequest.Template);
+                    Log.Info("Provisioning.Job.SiteProvisioningJob.ProvisionSites",
+                        "Successfully got outer template '{0}'. About to get provisioning template details for '{1}'.",
+                        siteRequest.Template, _template.ProvisioningTemplate);
                     var _provisioningTemplate = _tm.GetProvisioningTemplate(_template.ProvisioningTemplate);
                   
-                    //NO TEMPLATE FOUND THAT MATCHES WE CANNOT PROVISION A SITE
+                    //NO TEMPLATE FOUND THAT MATCHES WE CANNOT ROVISION A SITE
                     if (_template == null) {
                         Log.Warning("Provisioning.Job.SiteProvisioningJob.ProvisionSites", "Template {0} was not found for Site Url {1}.", siteRequest.Template, siteRequest.Url);
                     }
