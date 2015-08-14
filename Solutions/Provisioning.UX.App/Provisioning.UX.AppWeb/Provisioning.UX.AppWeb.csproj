@@ -146,6 +146,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pages\Shell.html" />
+    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\CandC_ClientSite.xml" />
+    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\COB_TeamSite_NoTax2.xml" />
+    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\COB_TeamSite_NoTaxonomy.xml" />
+    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\ContentAndCodeLogo.png" />
+    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\custombg.jpg" />
+    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\siteLogo.png" />
+    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\TeamSiteTemplate.xml" />
     <Content Include="Scripts\bootstrap.dialog.js" />
     <Content Include="Scripts\wizard\controllers\shell.js" />
     <Content Include="Styles\toastr.css" />
@@ -200,7 +207,10 @@
     </Content>
     <Content Include="Styles\toastr.scss" />
     <Content Include="Styles\toastr.less" />
+    <None Include="Properties\PublishProfiles\candc365-site-requests.pubxml" />
     <None Include="Properties\PublishProfiles\spsiteprov.pubxml" />
+    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\custom.spcolor" />
+    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\custom.spfont" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

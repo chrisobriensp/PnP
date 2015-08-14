@@ -149,6 +149,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\candc365-site-requests.pubxml" />
     <None Include="Properties\PublishProfiles\cob-pnp-provisioning.pubxml" />
     <None Include="Properties\webjob-publish-settings.json" />
     <None Include="provisioningSettings.config">
@@ -182,6 +183,7 @@
     <Content Include="Resources\EmailContent\NewSiteEmail.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\CandC_ClientSite.xml" />
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\COB_TeamSite_NoTax2.xml" />
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\COB_TeamSite_NoTaxonomy.xml">
       <SubType>Designer</SubType>

@@ -94,29 +94,29 @@ namespace ProvisioningTests._3_Data
         {
             var _owner = new SiteUser()
             {
-                Name = "frank@contoso.com"
+                Name = "chris.obrien@contentandcode.com"
             };
             //Add addtional Users
             List<SiteUser> _additionalAdmins = new List<SiteUser>();
             SiteUser _admin1 = new SiteUser();
-            _admin1.Name = "user1@contoso.com";
-            SiteUser _admin2 = new SiteUser();
-            //  _admin2.Email = "frank@microsoftacs.onmicrosoft.com";
-            _admin2.Name = "user2@contoso.com";
+            _admin1.Name = "Tarjinder.Dabb@contentandcode.com";
             _additionalAdmins.Add(_admin1);
-            _additionalAdmins.Add(_admin2);
+            //SiteUser _admin2 = new SiteUser();
+            //  _admin2.Email = "frank@microsoftacs.onmicrosoft.com";
+            //_admin2.Name = "Tarjinder.Dabb@contentandcode.com";
+            //_additionalAdmins.Add(_admin2);
 
             var _siteInfo = new SiteRequestInformation()
             {
-                Title = "Test Title",
-                Description = "Test Description",
-                Template = "CT2",
-                Url = "https://spsites.contoso.com/sites/B3",
+                Title = "Hardcoded Site Title from unit test",
+                Description = "Created by PnP provisioning",
+                Template = "SPO Team Site",
+                Url = "https://candc365.sharepoint.com/sites/COBTest1",
                 SitePolicy = "HBI",
                 SiteOwner = _owner,
                 AdditionalAdministrators = _additionalAdmins,
                 EnableExternalSharing = true,
-                SharePointOnPremises = true
+                SharePointOnPremises = false
             };
 
             return _siteInfo;
