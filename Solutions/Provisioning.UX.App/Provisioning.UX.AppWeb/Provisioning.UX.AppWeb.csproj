@@ -210,6 +210,7 @@
     <Content Include="Styles\toastr.scss" />
     <Content Include="Styles\toastr.less" />
     <None Include="Properties\PublishProfiles\candc365-site-requests.pubxml" />
+    <None Include="Properties\PublishProfiles\cob-pnp-provisioning.pubxml" />
     <None Include="Properties\PublishProfiles\spsiteprov.pubxml" />
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\custom.spcolor" />
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\custom.spfont" />

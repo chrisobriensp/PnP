@@ -150,6 +150,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\candc365-site-requests.pubxml" />
+    <None Include="Properties\PublishProfiles\cob-pnp-provisioning %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\cob-pnp-provisioning.pubxml" />
     <None Include="Properties\webjob-publish-settings.json" />
     <None Include="provisioningSettings.config">

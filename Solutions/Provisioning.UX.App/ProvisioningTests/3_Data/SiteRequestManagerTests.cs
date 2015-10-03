@@ -94,7 +94,7 @@ namespace ProvisioningTests._3_Data
         {
             var _owner = new SiteUser()
             {
-                Name = "chris.obrien@contentandcode.com"
+                Name = "cob@chrisobrien.com"
             };
             //Add addtional Users
             List<SiteUser> _additionalAdmins = new List<SiteUser>();
@@ -111,7 +111,7 @@ namespace ProvisioningTests._3_Data
                 Title = "Hardcoded Site Title from unit test",
                 Description = "Created by PnP provisioning",
                 Template = "SPO Team Site",
-                Url = "https://candc365.sharepoint.com/sites/COBTest1",
+                Url = "https://chrisobriensp.sharepoint.com/sites/COBTest1",
                 SitePolicy = "HBI",
                 SiteOwner = _owner,
                 AdditionalAdministrators = _additionalAdmins,
