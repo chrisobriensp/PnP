@@ -1,8 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{4511E57E-06B8-4442-9D6F-F06FFDE4F7A1}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{8DA204DE-67BE-4D0C-B8B2-788931F8A244}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Provisioning.UX.App", "Provisioning.UX.App\Provisioning.UX.App.csproj", "{DD58135C-14A4-4CBF-BBCD-6BB99FA3182E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Provisioning.UX.AppWeb", "Provisioning.UX.AppWeb\Provisioning.UX.AppWeb.csproj", "{081D660C-E872-46BF-B2CD-DD0A86A636EC}"
@@ -14,13 +21,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvisioningTests", "ProvisioningTests\ProvisioningTests.csproj", "{2E11E27F-300D-4E44-86F8-072267FDAF87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Provisioning.Job", "Provisioning.Job\Provisioning.Job.csproj", "{7752C5E7-4D76-4956-B616-6DAE0CE0021D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{4511E57E-06B8-4442-9D6F-F06FFDE4F7A1}"
-	ProjectSection(SolutionItems) = preProject
-		readme.md = readme.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{8DA204DE-67BE-4D0C-B8B2-788931F8A244}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

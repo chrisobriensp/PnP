@@ -4,7 +4,7 @@
      Name="CandC_SiteRequests"
      ProductID="{9dc55e96-ba86-4308-9724-5943319dafb0}"
      Version="1.0.0.0"
-     SharePointMinVersion="15.0.0.0"
+     SharePointMinVersion="16.0.0.0"
 >
   <Properties>
     <Title>Content and Code - site requests</Title>
