@@ -14,7 +14,7 @@ function JavaScript_Embed() {
 
     loadScript(jQuery, function () {
         $(document).ready(function () {
-            var message = "Loaded CandCProjectSite.js..."
+            var message = "This site is shared with external parties - please use the PRIVATE library for internal documentation.";
             // Execute status setter only after SP.JS has been loaded
             SP.SOD.executeOrDelayUntilScriptLoaded(function () { doStuff(message); }, 'sp.js');
         });

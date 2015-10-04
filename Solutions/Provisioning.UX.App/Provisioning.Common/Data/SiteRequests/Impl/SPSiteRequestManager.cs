@@ -230,7 +230,9 @@ namespace Provisioning.Common.Data.SiteRequests.Impl
                         Url = this.BaseSet(_item, SiteRequestFields.URL_NAME),
                         SiteOwner = this.BaseSetUser(ctx, _item, SiteRequestFields.OWNER_NAME),
                         AdditionalAdministrators = this.BaseSetUsers(ctx, _item, SiteRequestFields.ADD_ADMINS_NAME),
-                        EnableExternalSharing = this.BaseGet<bool>(_item, SiteRequestFields.EXTERNALSHARING_NAME),
+                        // COB - removed temporarily due to PnP bug..
+                        //EnableExternalSharing = this.BaseGet<bool>(_item, SiteRequestFields.EXTERNALSHARING_NAME),
+                        EnableExternalSharing = true,
                         RequestStatus = this.BaseSet(_item, SiteRequestFields.PROVISIONING_STATUS_NAME),
                         Lcid = this.BaseSetUint(_item, SiteRequestFields.LCID_NAME),
                         TimeZoneId = this.BaseSetInt(_item, SiteRequestFields.TIMEZONE_NAME),
