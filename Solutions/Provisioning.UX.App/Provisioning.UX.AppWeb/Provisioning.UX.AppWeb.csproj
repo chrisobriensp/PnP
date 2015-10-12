@@ -148,7 +148,7 @@
   <ItemGroup>
     <Content Include="Pages\Shell.html" />
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\CandC_ClientSite.xml" />
-    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\COB_TeamSite_NoTax2.xml" />
+    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\COB_TeamSite.xml" />
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\COB_TeamSite_NoTaxonomy.xml" />
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\ContentAndCodeLogo.png" />
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\custombg.jpg" />

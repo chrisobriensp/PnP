@@ -185,7 +185,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\CandC_ClientSite.xml" />
-    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\COB_TeamSite_NoTax2.xml" />
+    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\COB_TeamSite.xml" />
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\COB_TeamSite_NoTaxonomy.xml">
       <SubType>Designer</SubType>
     </Content>
