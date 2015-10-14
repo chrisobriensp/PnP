@@ -109,10 +109,6 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="OfficeDevPnP.Core, Version=1.7.1015.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OfficeDevPnPCore16.1.7.1015.0\lib\net45\OfficeDevPnP.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -172,12 +168,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Provisioning.Common\Provisioning.Common.csproj">
-      <Project>{77447711-3ab3-4390-a22c-75bb5a97bb95}</Project>
-      <Name>Provisioning.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Resources\EmailContent\FailEmail.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -214,6 +204,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\OfficeDevPnP.Core\OfficeDevPnP.Core\OfficeDevPnP.Core.csproj">
+      <Project>{f2077977-8ebf-409d-bbf4-8efb328928a8}</Project>
+      <Name>OfficeDevPnP.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Provisioning.Common\Provisioning.Common.csproj">
+      <Project>{77447711-3ab3-4390-a22c-75bb5a97bb95}</Project>
+      <Name>Provisioning.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebJobs.Publish.1.0.2\tools\webjobs.targets" Condition="Exists('..\packages\Microsoft.Web.WebJobs.Publish.1.0.2\tools\webjobs.targets')" />
