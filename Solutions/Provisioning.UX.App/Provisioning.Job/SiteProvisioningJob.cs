@@ -62,6 +62,8 @@ namespace Provisioning.Job
             {
                 try 
                 {
+                    // 1. GET TEMPLATE TO USE..
+
                     Log.Info("Provisioning.Job.SiteProvisioningJob.ProvisionSites",
                         "About to get outer template with name '{0}'", siteRequest.Template);
                     var _template = _tm.GetTemplateByName(siteRequest.Template);
@@ -70,16 +72,26 @@ namespace Provisioning.Job
                         siteRequest.Template, _template.ProvisioningTemplate);
                     var _provisioningTemplate = _tm.GetProvisioningTemplate(_template.ProvisioningTemplate);
                   
-                    //NO TEMPLATE FOUND THAT MATCHES WE CANNOT ROVISION A SITE
                     if (_template == null) {
                         Log.Warning("Provisioning.Job.SiteProvisioningJob.ProvisionSites", "Template {0} was not found for Site Url {1}.", siteRequest.Template, siteRequest.Url);
                     }
 
+                    // 2. UPDATE LIST ITEM WITH STATUS OF "PROCESSING"..
+
                     _requestManager.UpdateRequestStatus(siteRequest.Url, SiteRequestStatus.Processing);
                     SiteProvisioningManager _siteProvisioningManager = new SiteProvisioningManager(siteRequest, _template);
                     Log.Info("Provisioning.Job.SiteProvisioningJob.ProvisionSites", "Provisioning Site Request for Site Url {0}.", siteRequest.Url);
+
+                    // 3. CREATE SITE COLLECTION BASED ON OOTB TEMPLATE..
+
                     _siteProvisioningManager.CreateSiteCollection(siteRequest, _template);
+                    
+                    // 4. APPLY CUSTOM TEMPLATE..
+
                     _siteProvisioningManager.ApplyProvisioningTemplates(_provisioningTemplate, siteRequest);
+
+                    // 5. SEND E-MAIL..
+
                     this.SendSuccessEmail(siteRequest);
                     _requestManager.UpdateRequestStatus(siteRequest.Url, SiteRequestStatus.Complete);
                 }

@@ -184,10 +184,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\CandC_ClientSite.xml" />
-    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\COB_TeamSite_NoTax2.xml" />
-    <Content Include="Resources\SiteTemplates\ProvisioningTemplates\COB_TeamSite_NoTaxonomy.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\ContentAndCodeLogo.png" />
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\ContentAndCode_Logo.jpg" />
     <Content Include="Resources\SiteTemplates\ProvisioningTemplates\TeamSiteTemplate.xml">
